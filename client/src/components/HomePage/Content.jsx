@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import Grp from '../assets/images/Group.svg';
+import Grp from '../../assets/images/Group.svg';
 
 const Content = () => {
+  gsap.registerPlugin();
   // Refs for elements that will be animated
   const heroTextRef = useRef(null);
   const heroImageRef = useRef(null);
@@ -44,7 +45,7 @@ const Content = () => {
   }, []);
 
   return (
-    <>
+    <section className="p-6 w-full h-full">
       {/* Hero Section */}
       <div className="flex flex-col md:flex-row items-center justify-between bg-[#8086ee65] text-white rounded-3xl p-10 md:p-12">
         {/* Hero Text */}
@@ -119,7 +120,7 @@ const Content = () => {
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

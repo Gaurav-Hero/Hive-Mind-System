@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import { items } from '../assets/data/navData';
+import { items } from '../../assets/data/navData';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const navItem = useRef([]);
@@ -23,7 +24,7 @@ const Navbar = () => {
                 } else {
                     gsap.to(item, {
                         x: 200,
-                        y: -100,
+                        y: -200,
                         rotation: 360,
                         duration: 0.5,
                         opacity: 0,
@@ -63,7 +64,7 @@ const Navbar = () => {
     };
 
     return (
-        <div className='flex items-center gap-16 justify-end text-white z-30 pr-10'>
+        <div className='flex items-center gap-16 justify-end text-white z-30 pr-10 mb-5'>
             {items.map((item, index) => (
                 <div key={index} className='flex items-center justify-center font-bold text-center'>
                     <h1
@@ -74,7 +75,8 @@ const Navbar = () => {
                     >
                         {item.name}
                     </h1>
-                    <div
+                    <Link
+                        to={item.link}
                         onMouseEnter={() => handleMouseEnter(index)}
                         onMouseLeave={() => handleMouseLeave(index)}
                         className='h-[3em] w-[3.5em] z-20 relative h1-animation'>
@@ -90,7 +92,7 @@ const Navbar = () => {
                         >
                             <path d={item.dPath} />
                         </svg>
-                    </div>
+                    </Link>
                 </div>
             ))}
         </div>
