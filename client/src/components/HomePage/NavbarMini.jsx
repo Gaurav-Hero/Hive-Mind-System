@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaBars, FaDirections, FaTimes } from 'react-icons/fa'; // Icons for menu toggle
+import { Link } from 'react-router-dom';
 
 const NavbarMini = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,30 +28,30 @@ const NavbarMini = () => {
             isOpen ? 'block' : 'hidden'
           } md:flex-row md:items-center md:space-x-6 absolute md:static md:bg-[#8086ee65] decoration-none md:rounded-2xl top-[5.2rem] left-[1.24rem] xs:top-[7rem] xs:left-[2.6rem] w-[87%] md:w-[90%] text-center md:text-left opt`}
         >
-          <a
-            href="#home"
+          <Link
+            to="/"
             className="block py-2 px-4 md:hover:bg-transparent opts "
           >
             Home
-          </a>
-          <a
-            href="#login"
+          </Link>
+          <Link
+            to="/login"
             className="block py-2 px-4 md:hover:bg-transparent opts"
           >
             Login
-          </a>
-          <a
-            href="#about"
+          </Link>
+          <Link
+            to="/about"
             className="block py-2 px-4 md:hover:bg-transparent opts"
           >
             About
-          </a>
-          <a
-            href="#contact"
+          </Link>
+          <Link
+            to="/a"
             className="block py-2 px-4 md:hover:bg-transparent opts"
           >
             Contact
-          </a>
+          </Link>
         </div>
       </div>
     </nav>

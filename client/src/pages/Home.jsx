@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Background from '../components/Background'
-import Content from '../components/Content'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
-import NavbarMini from '../components/NavbarMini'
+import Background from '../components/HomePage/Background'
+import Content from '../components/HomePage/Content'
+import Footer from '../components/HomePage/Footer'
+import Navbar from '../components/HomePage/Navbar'
+import NavbarMini from '../components/HomePage/NavbarMini'
 import logo from '../assets/images/Logo.png'
 import logoW from '../assets/images/LogoWName.png'
 
@@ -35,10 +35,10 @@ const Home = () => {
       }, []);
 
     return (
-        <div className='min-h-screen min-w-screen relative overflow-x-hidden p-6'>
+        <div className='min-h-screen min-w-screen relative overflow-x-hidden'>
             <Background />
             <div className='flex items-center flex-col h-full justify-center gap-16'>
-                <div className='flex justify-between items-center w-full md:pl-6'>
+                <div className='flex justify-between items-center w-full md:pl-6 p-6'>
                     <span className='Logo w-[20%]'>
                         <img src={ isMobile ? logo : logoW } width={isMobile ? "100px" : "150px"} alt="Hive-Mind_LOGO"/>
                     </span>
@@ -46,12 +46,8 @@ const Home = () => {
                     {isMobile ? <NavbarMini /> : <Navbar />}
                     </div>
                 </div>
-                <div>
                     <Content />
-                </div>
-                <div>
                     <Footer />
-                </div>
             </div>
         </div>
     )
